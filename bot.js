@@ -1,7 +1,7 @@
 const { Telegraf, Markup, InputFile } = require('telegraf');
 const { MongoClient } = require('mongodb');
 
-const mongoUri = "YOUR MONGOURL";
+const mongoUri = "mongodb+srv://Test-Rename:swZjHfmQnmbbJDLX@cluster0.l67ew2y.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 const client = new MongoClient(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 let usersCollection;
@@ -15,11 +15,11 @@ async function startMessage(ctx) {
 
     updateUserInfo(userId, username, name);
 
-    const buttonURL = 'https://t.me/eBotHub';
+    const buttonURL = 'https://t.me/Optimus_TestUpdates';
 
     const welcomeText = `Welcome, ${name}! 🌟 I am a file sequencing bot. Built with ❤️ using JavaScript and the Telegraf library.\n\n`;
     const botDescription = `🤖 What I do:\nI help you sequence and organize your files. Use /ssequence to start the process. Send documents, videos, or audio files, and when you're done, use /esequence to get the sequenced files. Use /cancel to cancel all sequences.\n\n`;
-    const additionalInfo = `🔗 Owner: @ImMitsuoSuwa`;
+    const additionalInfo = `🔗 Owner: @JustMe_Charz`;
 
     const messageText = welcomeText + botDescription + additionalInfo;
 
@@ -108,7 +108,7 @@ client.connect().then(() => {
     const db = client.db('seq');
     usersCollection = db.collection('users');
 // fll ur bot token correctly//
-    const bot = new Telegraf('UR BOT TOKEN');
+    const bot = new Telegraf('7244688269:AAFqn6chSa0_71vk5wNrHqQYauTi97VlHWA');
     const port = process.env.PORT || 8080; // don't change port
 
     bot.start(startMessage);
